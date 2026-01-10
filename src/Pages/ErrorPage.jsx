@@ -5,9 +5,8 @@ import Footer from "../Components/Footer";
 
 const ErrorPage = () => {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-    <div className="flex flex-col min-h-screen mt-40">
       <div className="flex-1">
         <div className="flex flex-col items-center justify-center min-h-md bg-gray-300 p-8">
           <div className="text-center">
@@ -24,9 +23,8 @@ const ErrorPage = () => {
           </div>
         </div>
       </div>
-    </div>
       <Footer />
-      </div>
+    </div>
   );
 };
 
