@@ -5,15 +5,10 @@ import MyContainer from "./MyContainer";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("darkMode");
-    if (savedTheme === "true") {
-      setDarkMode(true);
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
+    const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("darkMode") === "true";
+  });
 
   useEffect(() => {
     if (darkMode) {
