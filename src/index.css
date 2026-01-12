@@ -1,2 +1,13 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+
+.tech-icon {
+  position: absolute;
+  font-size: 34px;
+  background: #0f172a;
+  padding: 3px;
+  border-radius: 50%;
+  border: 1px solid #334155;
+}
+

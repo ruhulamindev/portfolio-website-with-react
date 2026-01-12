@@ -2,6 +2,26 @@ import React from "react";
 import { Github, Linkedin, Download, Facebook } from "lucide-react";
 import { Link } from "react-router-dom";
 import MyContainer from "./../Components/MyContainer";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaGithub,
+} from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiMongodb,
+  SiFirebase,
+  SiNextdotjs,
+  SiExpress,
+  SiJavascript,
+  SiVercel,
+  SiNetlify,
+} from "react-icons/si";
 
 const HeroSection = () => {
   const handleDownloadResume = () => {
@@ -10,6 +30,23 @@ const HeroSection = () => {
     link.download = "Ruhul_Amin_Resume.pdf";
     link.click();
   };
+
+  const techIcons = [
+    { icon: FaHtml5, color: "text-orange-500" },
+    { icon: FaCss3Alt, color: "text-blue-500" },
+    { icon: SiTailwindcss, color: "text-sky-400" },
+    { icon: SiJavascript, color: "text-yellow-400" },
+    { icon: FaReact, color: "text-cyan-400" },
+    { icon: SiNextdotjs, color: "text-white" },
+    { icon: SiFirebase, color: "text-yellow-500" },
+    { icon: SiMongodb, color: "text-green-600" },
+    { icon: FaNodeJs, color: "text-green-500" },
+    { icon: SiExpress, color: "text-gray-300" },
+    { icon: FaGitAlt, color: "text-red-500" },
+    { icon: FaGithub, color: "text-gray-200" },
+    { icon: SiVercel, color: "text-white" },
+    { icon: SiNetlify, color: "text-teal-400" },
+  ];
 
   return (
     <div className="flex flex-col items-start justify-start bg-base-100 pt-4 md:pt-4">
@@ -70,15 +107,41 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Side - Profile Image */}
-          {/* Right Side - Profile Image */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="w-full max-w-sm aspect-square bg-base-200 rounded-2xl flex items-center justify-center border border-base-300 lg:ml-auto">
-              <img
-                src="/IMG_20240509_001921.jpg"
-                alt="Profile"
-                className="w-full h-full object-cover rounded-2xl"
-              />
+          {/* Right Side - Profile with Rotating Icons */}
+          <div className="flex border justify-center lg:justify-end">
+            <div className="relative border w-72 h-72 md:w-80 md:h-80 flex items-center justify-center">
+              {/* Rotating Ring */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+                className="absolute inset-0"
+              >
+                {techIcons.map((item, index) => {
+                  const Icon = item.icon;
+                  const angle = (360 / techIcons.length) * index;
+
+                  return (
+                    <div
+                      key={index}
+                      className="absolute top-1/2 left-1/2"
+                      style={{
+                        transform: `rotate(${angle}deg) translateY(-160px)`,
+                      }}
+                    >
+                      <Icon className={`tech-icon ${item.color}`} />
+                    </div>
+                  );
+                })}
+              </motion.div>
+
+              {/* Profile Image */}
+              <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary shadow-xl bg-base-200 z-10">
+                <img
+                  src="/IMG_20240509_001921.jpg"
+                  alt="Ruhul Amin"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
