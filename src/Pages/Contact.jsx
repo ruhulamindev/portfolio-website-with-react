@@ -26,7 +26,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-5 mb-10 app-card">
+    <section className="py-5 mb-5 app-card">
       <MyContainer className="px-4 md:px-8">
         {/* Heading */}
         <h1 className="text-4xl md:text-5xl font-bold mb-12">Get In Touch</h1>

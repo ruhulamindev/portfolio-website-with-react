@@ -2,28 +2,54 @@
   {
     "id": "1",
     "name": "English জানালা",
+    "type": "Frontend",
+    "category": "Education",
     "description": "A learning platform to help users improve their English skills from basics to advanced levels through interactive lessons, quizzes, vocabulary practice, and structured courses. The site provides an engaging experience for learners to build vocabulary, practice language skills, and track progress in an easy-to‑use interface.",
     "image": "/Screenshot 2026-01-10 140055.png",
     "technologies": ["HTML", "CSS", "JavaScript", "Interactive UI"],
     "live": "https://ruhulamindev.github.io/English-is-Easy/",
-    "github": "https://github.com/ruhulamindev/English-is-Easy.git"
+    "github": "https://github.com/ruhulamindev/English-is-Easy.git",
+    "challenges": "Coordinating data handling and UI was challenging.",
+    "futurePlan": "Add progress tracking and personalized learning dashboard."
   },
   {
     "id": "2",
     "name": "Finance",
+    "type": "Full Stack",
+    "category": "Finance",
     "description": "Finance is a web-based financial management application designed to help users track income, expenses, and investments efficiently. It provides an intuitive interface to manage personal finances and analyze financial data for better decision-making.",
     "image": "/Screenshot 2026-01-01 002347.png",
-    "technologies": ["React.js", "MongoDB", "Node.js", "Firebase", "Tailwind CSS", "Express.js"],
+    "technologies": [
+      "React.js",
+      "MongoDB",
+      "Node.js",
+      "Firebase",
+      "Tailwind CSS",
+      "Express.js"
+    ],
     "live": "https://b12-a10-client-finease.netlify.app/",
-    "github": "https://github.com/ruhulamindev/b12-a10-client-finease.git"
+    "github": "https://github.com/ruhulamindev/b12-a10-client-finease.git",
+    "challenges": "Real-time data synchronization between client and Firebase.",
+    "futurePlan": "Add analytics dashboard and reporting features."
   },
   {
     "id": "3",
     "name": "BookCourier",
+    "type": "Full Stack",
+    "category": "Delivery",
     "description": "BookCourier is a full-stack web application designed to manage book delivery services efficiently. The platform allows users to browse services, place delivery requests, and track orders, while admins can manage users, bookings, and delivery status through a secure dashboard.",
     "image": "/Screenshot 2026-01-01 000543.png",
-    "technologies": ["React.js", "Node.js", "MongoDB", "Express.js", "Firebase", "Tailwind CSS"],
+    "technologies": [
+      "React.js",
+      "Node.js",
+      "MongoDB",
+      "Express.js",
+      "Firebase",
+      "Tailwind CSS"
+    ],
     "live": "https://b12-a11-client-bookcourier.vercel.app/",
-    "github": "https://github.com/ruhulamindev/b12-a11-client-bookcourier.git"
+    "github": "https://github.com/ruhulamindev/b12-a11-client-bookcourier.git",
+    "challenges": "Managing user authentication and booking workflow securely.",
+    "futurePlan": "Implement admin analytics and automated notifications."
   }
 ]

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MyContainer from "../Components/MyContainer";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -23,7 +24,7 @@ const Projects = () => {
   }
 
   return (
-    <section id="projects" className="py-5 app-card">
+    <section className="py-5 mb-5 app-card">
       <MyContainer className="px-4 md:px-8">
         <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center">
           My Projects
@@ -49,20 +50,21 @@ const Projects = () => {
                 {/* Project Name / Title */}
                 <h2 className="card-title">{project.name}</h2>
 
-                <p className="text-sm text-justify mt-2">
-                  {project.description}
-                </p>
-
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mt-3">
-                  {project.technologies.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="badge badge-outline badge-primary"
-                    >
-                      {tech}
+                {/* Type (Left) & Category (Right) */}
+                <div className="flex items-center justify-between mt-2">
+                  {/* Project Type */}
+                  {project.type && (
+                    <span className="badge badge-outline badge-info">
+                      {project.type}
                     </span>
-                  ))}
+                  )}
+
+                  {/* Category */}
+                  {project.category && (
+                    <span className="badge badge-outline badge-primary">
+                      {project.category}
+                    </span>
+                  )}
                 </div>
 
                 {/* Action Buttons */}
@@ -77,16 +79,14 @@ const Projects = () => {
                       Live Demo
                     </a>
                   )}
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-sm btn-outline"
-                    >
-                      GitHub
-                    </a>
-                  )}
+
+                  {/* View Details Button */}
+                  <Link
+                    to={`/projects/${project.id}`}
+                    className="btn btn-sm btn-secondary"
+                  >
+                    View Details
+                  </Link>
                 </div>
               </div>
             </div>

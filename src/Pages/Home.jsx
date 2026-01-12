@@ -8,11 +8,11 @@ import Skills from './Skills';
 const Home = () => {
   return (
     <div>
-      <HeroSection id="hero" />
-      <Projects id="projects" />
-      <About id="about" />
-      <Contact id="contact" />
-      <Skills id="skills" />
+      <HeroSection />
+      <Projects />
+      <About />
+      <Contact />
+      <Skills />
     </div>
   );
 };

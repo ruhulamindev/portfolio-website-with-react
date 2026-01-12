@@ -1,6 +1,7 @@
 import React from "react";
 import { Github, Linkedin, Download, Facebook } from "lucide-react";
 import MyContainer from "./../Components/MyContainer";
+import { Link } from "react-router";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import {
@@ -31,13 +32,6 @@ const HeroSection = () => {
     // link.click();
   };
 
-  const scrollToProjects = () => {
-    const projectsSection = document.getElementById("projects");
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   const techIcons = [
     { icon: FaHtml5, color: "text-orange-500" },
     { icon: FaCss3Alt, color: "text-blue-500" },
@@ -56,10 +50,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section
-      id="hero"
-      className="flex py-6 mb-15 flex-col items-start justify-start pt-4 md:pt-4 app-card"
-    >
+    <div className="flex py-5 mb-5 flex-col items-start justify-start pt-4 md:pt-4 app-card">
       <MyContainer className="px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Text */}
@@ -92,9 +83,9 @@ const HeroSection = () => {
               >
                 <Download size={20} /> Download Resume
               </button>
-              <button onClick={scrollToProjects} className="btn btn-outline">
-                View My Work
-              </button>
+              <Link to="/projects">
+                <button className="btn btn-outline">View My Work</button>
+              </Link>
             </div>
 
             {/* Social Links */}
@@ -193,7 +184,7 @@ const HeroSection = () => {
           </div>
         </div>
       </MyContainer>
-    </section>
+    </div>
   );
 };
 

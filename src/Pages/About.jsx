@@ -3,7 +3,7 @@ import MyContainer from "./../Components/MyContainer";
 
 const About = () => {
   return (
-    <section id="about" className="py-10 my-10 md:py-10 app-card">
+    <section className="py-5 mb-5 app-card">
       <MyContainer className="px-4 md:px-8">
         {/* Heading */}
         <h1 className="text-4xl md:text-5xl font-bold mb-12">
@@ -18,11 +18,11 @@ const About = () => {
               My Journey
             </h3>
             <p className="text-justify">
-              I started my programming journey with a strong passion for building
-              modern, responsive, and user-friendly web applications. Over time,
-              I have gained hands-on experience with frontend and MERN stack
-              technologies and continuously improve my skills through practice
-              and real-world projects.
+              I started my programming journey with a strong passion for
+              building modern, responsive, and user-friendly web applications.
+              Over time, I have gained hands-on experience with frontend and
+              MERN stack technologies and continuously improve my skills through
+              practice and real-world projects.
             </p>
           </div>
 
