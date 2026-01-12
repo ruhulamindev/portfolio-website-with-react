@@ -23,7 +23,7 @@ const Projects = () => {
   }
 
   return (
-    <section className="py-5 bg-base-100">
+    <section id="projects" className="py-5 bg-base-100">
       <MyContainer className="px-4 md:px-8">
         <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center">
           My Projects

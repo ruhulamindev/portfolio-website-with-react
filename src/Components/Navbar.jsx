@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { Menu, X, Moon } from "lucide-react";
-import { Link, NavLink } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import MyContainer from "./MyContainer";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "Skills", path: "/skills" },
-    { name: "Projects", path: "/projects" },
-    { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", to: "hero" },
+    { name: "Skills", to: "skills" },
+    { name: "Projects", to: "projects" },
+    { name: "About", to: "about" },
+    { name: "Contact", to: "contact" },
   ];
 
   return (
@@ -19,9 +19,15 @@ const Navbar = () => {
       <MyContainer className="px-4 md:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold text-primary">
+          <ScrollLink
+            to="hero"
+            smooth={true}
+            duration={500}
+            offset={-80} // navbar height
+            className="text-2xl font-bold text-primary cursor-pointer"
+          >
             Ruhul Amin
-          </Link>
+          </ScrollLink>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6">
@@ -31,19 +37,16 @@ const Navbar = () => {
             </div>
 
             {navLinks.map((link) => (
-              <NavLink
-                key={link.path}
-                to={link.path}
-                className={({ isActive }) =>
-                  `font-medium transition ${
-                    isActive
-                      ? "text-primary"
-                      : "text-base-content hover:text-primary"
-                  }`
-                }
+              <ScrollLink
+                key={link.to}
+                to={link.to}
+                smooth={true}
+                duration={500}
+                offset={-80}
+                className="font-medium cursor-pointer hover:text-primary transition"
               >
                 {link.name}
-              </NavLink>
+              </ScrollLink>
             ))}
           </div>
 
@@ -67,20 +70,17 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden flex flex-col gap-2 py-4">
             {navLinks.map((link) => (
-              <NavLink
-                key={link.path}
-                to={link.path}
+              <ScrollLink
+                key={link.to}
+                to={link.to}
+                smooth={true}
+                duration={500}
+                offset={-80}
                 onClick={() => setIsOpen(false)}
-                className={({ isActive }) =>
-                  `px-4 py-2 rounded-lg font-medium transition ${
-                    isActive
-                      ? "bg-primary text-white"
-                      : "hover:bg-base-200"
-                  }`
-                }
+                className="px-4 py-2 rounded-lg font-medium cursor-pointer hover:bg-base-200 transition"
               >
                 {link.name}
-              </NavLink>
+              </ScrollLink>
             ))}
           </div>
         )}

@@ -3,7 +3,7 @@ import MyContainer from "./../Components/MyContainer";
 
 const About = () => {
   return (
-    <section className="py-16 md:py-24 bg-base-100">
+    <section id="about" className="py-16 mb-10 md:py-24 bg-base-100">
       <MyContainer className="px-4 md:px-8">
         {/* Heading */}
         <h1 className="text-4xl md:text-5xl font-bold mb-12">
