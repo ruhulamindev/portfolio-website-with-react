@@ -1,10 +1,29 @@
-import React, { useState } from "react";
-import { Menu, X, Moon } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import { Link as ScrollLink } from "react-scroll";
 import MyContainer from "./MyContainer";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("darkMode");
+    if (savedTheme === "true") {
+      setDarkMode(true);
+      document.documentElement.classList.add("dark");
+    }
+  }, []);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("darkMode", "true");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("darkMode", "false");
+    }
+  }, [darkMode]);
 
   const navLinks = [
     { name: "Home", to: "hero" },
@@ -15,7 +34,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-gray-200 border-b border-base-300 shadow-sm">
+    <nav className="sticky top-0 z-50 border-b border-base-300 shadow-sm app-card">
       <MyContainer className="px-4 md:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -31,10 +50,13 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6">
-                        {/* Just Icon */}
-            <div className="ml-4 p-2 rounded-lg hover:bg-base-200 transition cursor-pointer">
-              <Moon size={20} />
-            </div>
+            {/* Dark Mode Toggle */}
+            <button
+              onClick={() => setDarkMode(!darkMode)}
+              className="p-2 rounded-lg hover:bg-base-200 transition cursor-pointer"
+            >
+              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
 
             {navLinks.map((link) => (
               <ScrollLink
@@ -52,10 +74,13 @@ const Navbar = () => {
 
           {/* Mobile Button */}
           <div className="flex md:hidden items-center gap-2">
-            {/* Just Icon */}
-            <div className="p-2 rounded-lg hover:bg-base-200 transition cursor-pointer">
-              <Moon size={20} />
-            </div>
+            {/* Dark Mode Toggle */}
+            <button
+              onClick={() => setDarkMode(!darkMode)}
+              className="p-2 rounded-lg hover:bg-base-200 transition cursor-pointer"
+            >
+              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
 
             <button
               onClick={() => setIsOpen(!isOpen)}

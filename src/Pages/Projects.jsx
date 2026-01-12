@@ -23,7 +23,7 @@ const Projects = () => {
   }
 
   return (
-    <section id="projects" className="py-5 bg-base-100">
+    <section id="projects" className="py-5 app-card">
       <MyContainer className="px-4 md:px-8">
         <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center">
           My Projects
@@ -33,7 +33,7 @@ const Projects = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="card bg-base-200 shadow-lg hover:shadow-xl transition"
+              className="card shadow-lg hover:shadow-xl transition app-card"
             >
               {/* Image */}
               <figure className="h-48 overflow-hidden">
@@ -49,7 +49,7 @@ const Projects = () => {
                 {/* Project Name / Title */}
                 <h2 className="card-title">{project.name}</h2>
 
-                <p className="text-sm text-justify text-base-content/70 mt-2">
+                <p className="text-sm text-justify mt-2">
                   {project.description}
                 </p>
 

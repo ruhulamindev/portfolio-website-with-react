@@ -7,8 +7,8 @@ const ErrorPage = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <div className="flex-1">
-        <div className="flex flex-col items-center justify-center min-h-md bg-gray-300 p-8">
+      <div className="flex-1 app-card mt-2">
+        <div className="flex flex-col items-center justify-center min-h-md p-8">
           <div className="text-center">
             <h1 className="text-8xl font-bold text-red-500 mb-4">404</h1>
             <h2 className="text-3xl font-semibold mb-2">

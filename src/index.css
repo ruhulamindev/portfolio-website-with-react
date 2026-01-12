@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-
+/* profile animation */
 .tech-icon {
   position: absolute;
   font-size: 34px;
@@ -11,3 +11,74 @@
   border: 1px solid #334155;
 }
 
+/* darkmode styles */
+:root {
+  --bg-color: #fafafa;
+  --text-color: #111111;
+  --card-bg: #ffffff;
+  --border-color: #e5e7eb;
+
+  --icon-bg: #e5e7eb; /* dark icon bg */
+  --icon-hover-bg: #d1d5db; /* dark icon hover bg */
+  --profile-border: 1px solid #f59e0b; /*border profile img*/
+}
+
+.dark {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --card-bg: #0f172a;
+  --border-color: #1f2937;
+
+  --icon-bg: #1f2937; /* dark icon bg */
+  --icon-hover-bg: #374151; /* dark icon hover bg */
+  --profile-border: 0; /*border profile img*/
+}
+
+/* body */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* card */
+.app-card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+
+/* badges */
+.badge {
+  background-color: transparent; /* badge-outline */
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+/* border profile img */
+.profile-ring {
+  border: var(--profile-border);
+}
+
+/* progress bar dark mode */
+.progress-primary {
+  background-color: var(--border-color); /* track bg */
+}
+
+.dark .progress-primary {
+  background-color: #374151; /* dark track */
+}
+
+.progress-primary::-webkit-progress-value {
+  background-color: #a855f7; /* fill color */
+}
+
+.progress-primary::-moz-progress-bar {
+  background-color: #a855f7; /* fill color */
+}
+
+.card {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--border-color);
+}

@@ -7,14 +7,14 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-200 border-t border-base-300 mt-2">
+    <footer className="border-t border-base-300 mt-2 app-card">
       <MyContainer className="px-4 md:px-8 py-12">
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start text-center md:text-left">
           {/* About - Left */}
           <div className="md:text-left flex flex-col items-center md:items-start">
             <h3 className="text-xl font-bold text-primary mb-3">Ruhul Amin</h3>
-            <p className="text-sm text-base-content/70">
+            <p className="text-sm">
               Frontend & MERN Stack Developer passionate about building modern,
               responsive, and user-friendly web applications.
             </p>
@@ -24,16 +24,24 @@ const Footer = () => {
           <div className="flex flex-col items-center">
             <h4 className="font-semibold mb-3">Quick Links</h4>
             <ul className="space-y-2 text-sm">
-              {["/", "/skills", "/projects", "/about", "/contact"].map((path, idx) => {
-                const names = ["Home", "Skills", "Projects", "About", "Contact"];
-                return (
-                  <li key={idx}>
-                    <Link to={path} className="hover:text-primary transition">
-                      {names[idx]}
-                    </Link>
-                  </li>
-                );
-              })}
+              {["/", "/skills", "/projects", "/about", "/contact"].map(
+                (path, idx) => {
+                  const names = [
+                    "Home",
+                    "Skills",
+                    "Projects",
+                    "About",
+                    "Contact",
+                  ];
+                  return (
+                    <li key={idx}>
+                      <Link to={path} className="hover:text-primary transition">
+                        {names[idx]}
+                      </Link>
+                    </li>
+                  );
+                }
+              )}
             </ul>
           </div>
 
@@ -45,7 +53,17 @@ const Footer = () => {
                 href="https://github.com/ruhulamindev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-base-200 hover:bg-primary hover:text-white transition"
+                className="p-3 rounded-lg transition"
+                style={{
+                  backgroundColor: "var(--icon-bg)",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor =
+                    "var(--icon-hover-bg)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = "var(--icon-bg)")
+                }
               >
                 <Github size={20} />
               </a>
@@ -53,7 +71,17 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/md-ruhul-amin8/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-base-200 hover:bg-primary hover:text-white transition"
+                className="p-3 rounded-lg transition"
+                style={{
+                  backgroundColor: "var(--icon-bg)",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor =
+                    "var(--icon-hover-bg)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = "var(--icon-bg)")
+                }
               >
                 <Linkedin size={20} />
               </a>
@@ -61,7 +89,17 @@ const Footer = () => {
                 href="https://www.facebook.com/profile.php?id=61566534111401"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-base-200 hover:bg-primary hover:text-white transition"
+                className="p-3 rounded-lg transition"
+                style={{
+                  backgroundColor: "var(--icon-bg)",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor =
+                    "var(--icon-hover-bg)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = "var(--icon-bg)")
+                }
               >
                 <Facebook size={20} />
               </a>
@@ -73,7 +111,7 @@ const Footer = () => {
         <div className="border-t border-base-300 my-8"></div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-sm text-base-content/70 gap-2">
+        <div className="flex flex-col md:flex-row justify-between items-center text-sm gap-2">
           <p>© {currentYear} Ruhul Amin. All rights reserved.</p>
           <p className="flex items-center gap-1">
             Made with <Heart size={16} className="text-primary" /> by Ruhul Amin

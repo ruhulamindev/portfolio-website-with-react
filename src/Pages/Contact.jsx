@@ -26,7 +26,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-5 mb-10 bg-base-100">
+    <section id="contact" className="py-5 mb-10 app-card">
       <MyContainer className="px-4 md:px-8">
         {/* Heading */}
         <h1 className="text-4xl md:text-5xl font-bold mb-12">Get In Touch</h1>
@@ -95,7 +95,7 @@ const Contact = () => {
           </div>
 
           {/* Right: Contact Form */}
-          <div className="bg-base-200 p-8 rounded-2xl border border-base-300">
+          <div className="p-8 rounded-2xl border border-base-300 app-card">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium mb-2">Name</label>

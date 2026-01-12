@@ -32,12 +32,11 @@ const HeroSection = () => {
   };
 
   const scrollToProjects = () => {
-  const projectsSection = document.getElementById("projects");
-  if (projectsSection) {
-    projectsSection.scrollIntoView({ behavior: "smooth" });
-  }
-};
-
+    const projectsSection = document.getElementById("projects");
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const techIcons = [
     { icon: FaHtml5, color: "text-orange-500" },
@@ -59,7 +58,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="flex mb-15 flex-col items-start justify-start bg-base-100 pt-4 md:pt-4"
+      className="flex py-6 mb-15 flex-col items-start justify-start pt-4 md:pt-4 app-card"
     >
       <MyContainer className="px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -72,14 +71,14 @@ const HeroSection = () => {
               </h1>
               <p className="overflow-hidden relative w-full h-8">
                 <motion.span
-                  className="inline-block whitespace-nowrap text-xl text-gray-800"
+                  className="inline-block whitespace-nowrap  text-xl "
                   animate={{ x: ["100%", "-100%"] }}
                   transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
                 >
                   💻Frontend & MERN Stack Developer
                 </motion.span>
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg  leading-relaxed">
                 I create beautiful, responsive web applications with modern
                 technologies.
               </p>
@@ -93,7 +92,9 @@ const HeroSection = () => {
               >
                 <Download size={20} /> Download Resume
               </button>
-                <button onClick={scrollToProjects} className="btn btn-outline">View My Work</button>
+              <button onClick={scrollToProjects} className="btn btn-outline">
+                View My Work
+              </button>
             </div>
 
             {/* Social Links */}
@@ -102,7 +103,17 @@ const HeroSection = () => {
                 href="https://github.com/ruhulamindev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-base-200 hover:bg-primary/10 rounded-lg transition"
+                className="p-3 rounded-lg transition"
+                style={{
+                  backgroundColor: "var(--icon-bg)",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor =
+                    "var(--icon-hover-bg)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = "var(--icon-bg)")
+                }
               >
                 <Github size={24} />
               </a>
@@ -110,13 +121,33 @@ const HeroSection = () => {
                 href="https://www.linkedin.com/in/md-ruhul-amin8/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-base-200 hover:bg-primary/10 rounded-lg transition"
+                className="p-3 rounded-lg transition"
+                style={{
+                  backgroundColor: "var(--icon-bg)",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor =
+                    "var(--icon-hover-bg)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = "var(--icon-bg)")
+                }
               >
                 <Linkedin size={24} />
               </a>
               <a
                 href="https://www.facebook.com/profile.php?id=61566534111401"
-                className="p-3 bg-base-200 hover:bg-primary/10 rounded-lg transition"
+                className="p-3 rounded-lg transition"
+                style={{
+                  backgroundColor: "var(--icon-bg)",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor =
+                    "var(--icon-hover-bg)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = "var(--icon-bg)")
+                }
               >
                 <Facebook size={24} />
               </a>
@@ -125,7 +156,7 @@ const HeroSection = () => {
 
           {/* Right Side - Profile with Rotating Icons */}
           <div className="flex justify-center lg:justify-end">
-            <div className="relative border border-amber-200 rounded-full w-72 h-72 md:w-80 md:h-80 flex items-center justify-center">
+            <div className="relative border border-amber-500 profile-ring rounded-full w-72 h-72 md:w-80 md:h-80 flex items-center justify-center">
               {/* Rotating Ring */}
               <motion.div
                 animate={{ rotate: 360 }}

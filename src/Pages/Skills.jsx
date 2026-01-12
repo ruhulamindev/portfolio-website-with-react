@@ -37,7 +37,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="min-h-screen bg-base-100 py-5">
+    <section id="skills" className="min-h-screen bg-base-100 py-5 app-card mb-6">
       <div className="max-w-6xl mx-auto px-4 md:px-8">
         
         {/* Heading */}
@@ -62,7 +62,7 @@ const Skills = () => {
                 <h2 className="card-title text-primary">
                   {category.title}
                 </h2>
-                <p className="text-sm text-base-content/60 mb-4">
+                <p className="text-sm mb-4">
                   Level: {category.level}
                 </p>
 
