@@ -50,7 +50,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <div className="flex py-5 mb-5 flex-col items-start justify-start pt-4 md:pt-4 app-card">
+    <div className="flex py-10 mb-5 flex-col items-start justify-start pt-4 md:pt-4 app-card overflow-x-hidden overflow-y-hidden">
       <MyContainer className="px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Text */}
@@ -60,15 +60,21 @@ const HeroSection = () => {
                 Hello, I'm <br />
                 <span className="text-primary">Ruhul Amin</span>
               </h1>
-              <p className="overflow-hidden relative w-full h-8">
-                <motion.span
-                  className="inline-block whitespace-nowrap  text-xl "
-                  animate={{ x: ["100%", "-100%"] }}
-                  transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
+              <div className="relative w-full mb-2 overflow-hidden h-8">
+                <motion.div
+                  className="absolute whitespace-nowrap text-xl font-bold md:text-[25px]"
+                  initial={{ x: "100%" }}
+                  animate={{ x: "-100%" }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 8,
+                    ease: "linear",
+                  }}
                 >
-                  💻Frontend & MERN Stack Developer
-                </motion.span>
-              </p>
+                  💻 Frontend & MERN Stack Developer
+                </motion.div>
+              </div>
+
               <p className="text-lg  leading-relaxed">
                 I create beautiful, responsive web applications with modern
                 technologies.
@@ -146,8 +152,8 @@ const HeroSection = () => {
           </div>
 
           {/* Right Side - Profile with Rotating Icons */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative border border-amber-500 profile-ring rounded-full w-72 h-72 md:w-80 md:h-80 flex items-center justify-center">
+          <div className="flex justify-center md:p-2 p-6 lg:justify-end">
+            <div className="relative profile-ring rounded-full w-72 h-72 md:w-80 md:h-80 flex items-center justify-center">
               {/* Rotating Ring */}
               <motion.div
                 animate={{ rotate: 360 }}
@@ -173,7 +179,7 @@ const HeroSection = () => {
               </motion.div>
 
               {/* Profile Image */}
-              <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary shadow-xl bg-base-200 z-10">
+              <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary shadow-xl z-10">
                 <img
                   src="/IMG_20240509_001921.jpg"
                   alt="Ruhul Amin"
